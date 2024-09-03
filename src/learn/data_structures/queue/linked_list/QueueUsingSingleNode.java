@@ -1,25 +1,23 @@
-package learn.queue.array;
+package learn.data_structures.queue.linked_list;
+
+import learn.util.Node;
 
 import java.util.Scanner;
 
-public class QueueUsingArray {
+public class QueueUsingSingleNode {
+    Node head;
 
-    int size, front = 0, rear = -1;
-    int[] arr;
+    QueueUsingSingleNode() {
+        head = null;
+    }
 
     public static void main(String[] args) {
-        QueueUsingArray queue = new QueueUsingArray();
+        QueueUsingSingleNode queue = new QueueUsingSingleNode();
         queue.process();
     }
 
     public void process() {
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("\nPlease enter the size of the queue: ");
-        size = sc.nextInt();
-
-        System.out.println("Entered queue size is :: " + size);
-        arr = new int[size];
 
         while (true) {
             System.out.println();
@@ -47,39 +45,40 @@ public class QueueUsingArray {
     }
 
     public void enqueue(int element) {
-        if (front > rear) {
-            front = 0;
-            rear = -1;
-        }
-
         System.out.println("Inserting " + element + " to the queue");
-        if (rear == size - 1) {
-            System.out.println("Queue is full");
-            return;
-        }
+        Node newNode = new Node(element);
 
-        arr[++rear] = element;
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node currentNode = head;
+            while (currentNode.getNext() != null) {
+                currentNode = currentNode.getNext();
+            }
+            currentNode.setNext(newNode);
+        }
     }
 
     public void dequeue() {
-        if (front > rear) {
+        if (head == null) {
             System.out.println("Queue is empty");
-            return;
+        } else {
+            System.out.println("Element removed :: " + head.getValue());
+            head = head.getNext();
         }
-
-        System.out.println("Element Removed :: " + arr[front++]);
     }
 
     public void display() {
-        if (front > rear) {
+        if (head == null) {
             System.out.println("Queue is empty");
-            return;
+        } else {
+            Node currentNode = head;
+            System.out.print("Content :: ");
+            while (currentNode != null) {
+                System.out.print(currentNode.getValue() + " ");
+                currentNode = currentNode.getNext();
+            }
+            System.out.println();
         }
-
-        System.out.print("Contents :: ");
-        for (int i = front; i <= rear; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
     }
 }

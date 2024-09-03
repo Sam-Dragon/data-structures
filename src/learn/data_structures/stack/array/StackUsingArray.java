@@ -1,4 +1,4 @@
-package learn.stack.array;
+package learn.data_structures.stack.array;
 
 import java.util.Scanner;
 

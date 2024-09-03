@@ -1,15 +1,15 @@
-package learn.stack.multiple;
+package learn.data_structures.stack.multiple;
 
 import java.util.Scanner;
 
-public class MultipleStack {
+public class MultipleStackUsingArray {
 
     int size;
     int top_from_beginning = -1, top_from_middle;
     int[] arr;
 
     public static void main(String[] args) {
-        MultipleStack ms = new MultipleStack();
+        MultipleStackUsingArray ms = new MultipleStackUsingArray();
         ms.process();
     }
 

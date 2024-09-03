@@ -1,12 +1,14 @@
-package learn.stack.linked_list;
+package learn.data_structures.stack.linked_list;
+
+import learn.util.Node;
 
 import java.util.Scanner;
 
-public class StackUsingLinkedList {
+public class StackUsingSingleNode {
     Node head;
 
     public static void main(String[] args) {
-        StackUsingLinkedList stack = new StackUsingLinkedList();
+        StackUsingSingleNode stack = new StackUsingSingleNode();
 
         stack.process();
     }
@@ -50,7 +52,7 @@ public class StackUsingLinkedList {
         Node newNode = new Node(element);
 
         if (head != null)
-            newNode.next = head;
+            newNode.setNext(head);
 
         head = newNode;
     }
@@ -61,8 +63,8 @@ public class StackUsingLinkedList {
             return;
         }
 
-        System.out.println("Element Removed :: " + head.value);
-        head = head.next;
+        System.out.println("Element Removed :: " + head.getValue());
+        head = head.getNext();
     }
 
     private void peek() {
@@ -71,7 +73,7 @@ public class StackUsingLinkedList {
             return;
         }
 
-        System.out.println("Top Element :: " + head.value);
+        System.out.println("Top Element :: " + head.getValue());
     }
 
     private void display() {
@@ -84,18 +86,9 @@ public class StackUsingLinkedList {
 
         System.out.print("Content :: ");
         while (currentNode != null) {
-            System.out.print(currentNode.value + " ");
-            currentNode = currentNode.next;
+            System.out.print(currentNode.getValue() + " ");
+            currentNode = currentNode.getNext();
         }
     }
 }
 
-class Node {
-    int value;
-    Node next;
-
-    Node(int value) {
-        this.value = value;
-        this.next = null;
-    }
-}

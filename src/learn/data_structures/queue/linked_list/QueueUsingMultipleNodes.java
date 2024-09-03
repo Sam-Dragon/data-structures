@@ -1,16 +1,18 @@
-package learn.queue.linked_list;
+package learn.data_structures.queue.linked_list;
+
+import learn.util.Node;
 
 import java.util.Scanner;
 
-public class QueueUsingLinkedList {
+public class QueueUsingMultipleNodes {
     Node front, rear;
 
-    QueueUsingLinkedList() {
+    QueueUsingMultipleNodes() {
         front = rear = null;
     }
 
     public static void main(String[] args) {
-        QueueUsingLinkedList queue = new QueueUsingLinkedList();
+        QueueUsingMultipleNodes queue = new QueueUsingMultipleNodes();
         queue.process();
     }
 
@@ -47,7 +49,7 @@ public class QueueUsingLinkedList {
         Node newNode = new Node(element);
 
         if (rear != null) {
-            rear.next = newNode;
+            rear.setNext(newNode);
             rear = newNode;
         } else {
             // First element in queue
@@ -57,8 +59,8 @@ public class QueueUsingLinkedList {
 
     public void dequeue() {
         if (front != null) {
-            System.out.println("Element removed :: " + front.value);
-            front = front.next;
+            System.out.println("Element removed :: " + front.getValue());
+            front = front.getNext();
         } else {
             System.out.println("Queue is empty");
         }
@@ -74,19 +76,10 @@ public class QueueUsingLinkedList {
 
         System.out.print("Content :: ");
         while (currentNode != null) {
-            System.out.print(currentNode.value + " ");
-            currentNode = currentNode.next;
+            System.out.print(currentNode.getValue() + " ");
+            currentNode = currentNode.getNext();
         }
         System.out.println();
     }
 }
 
-class Node {
-    int value;
-    Node next;
-
-    public Node(int value) {
-        this.value = value;
-        this.next = null;
-    }
-}
