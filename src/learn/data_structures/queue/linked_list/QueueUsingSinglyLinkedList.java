@@ -4,15 +4,15 @@ import learn.util.Node;
 
 import java.util.Scanner;
 
-public class QueueUsingSingleNode {
+public class QueueUsingSinglyLinkedList {
     Node head;
 
-    QueueUsingSingleNode() {
+    QueueUsingSinglyLinkedList() {
         head = null;
     }
 
     public static void main(String[] args) {
-        QueueUsingSingleNode queue = new QueueUsingSingleNode();
+        QueueUsingSinglyLinkedList queue = new QueueUsingSinglyLinkedList();
         queue.process();
     }
 
@@ -44,11 +44,15 @@ public class QueueUsingSingleNode {
         }
     }
 
+    private boolean isEmpty() {
+        return head == null;
+    }
+
     public void enqueue(int element) {
         System.out.println("Inserting " + element + " to the queue");
         Node newNode = new Node(element);
 
-        if (head == null) {
+        if (isEmpty()) {
             head = newNode;
         } else {
             Node currentNode = head;
@@ -60,7 +64,7 @@ public class QueueUsingSingleNode {
     }
 
     public void dequeue() {
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Queue is empty");
         } else {
             System.out.println("Element removed :: " + head.getValue());
@@ -69,7 +73,7 @@ public class QueueUsingSingleNode {
     }
 
     public void display() {
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Queue is empty");
         } else {
             Node currentNode = head;

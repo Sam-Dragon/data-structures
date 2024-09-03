@@ -4,11 +4,11 @@ import learn.util.Node;
 
 import java.util.Scanner;
 
-public class StackUsingSingleNode {
+public class StackUsingSinglyLinkedList {
     Node head;
 
     public static void main(String[] args) {
-        StackUsingSingleNode stack = new StackUsingSingleNode();
+        StackUsingSinglyLinkedList stack = new StackUsingSinglyLinkedList();
 
         stack.process();
     }
@@ -48,6 +48,10 @@ public class StackUsingSingleNode {
         }
     }
 
+    private boolean isEmpty() {
+        return head == null;
+    }
+
     private void push(int element) {
         Node newNode = new Node(element);
 
@@ -58,7 +62,7 @@ public class StackUsingSingleNode {
     }
 
     private void pop() {
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Stack is underflow");
             return;
         }
@@ -68,7 +72,7 @@ public class StackUsingSingleNode {
     }
 
     private void peek() {
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Stack is underflow");
             return;
         }
@@ -77,13 +81,12 @@ public class StackUsingSingleNode {
     }
 
     private void display() {
-        var currentNode = head;
-
-        if (currentNode == null) {
+        if (isEmpty()) {
             System.out.println("Stack is empty");
             return;
         }
 
+        var currentNode = head;
         System.out.print("Content :: ");
         while (currentNode != null) {
             System.out.print(currentNode.getValue() + " ");
