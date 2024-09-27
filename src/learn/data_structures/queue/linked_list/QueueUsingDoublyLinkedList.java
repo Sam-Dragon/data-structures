@@ -4,15 +4,15 @@ import learn.util.Node;
 
 import java.util.Scanner;
 
-public class QueueUsingMultipleNodes {
+public class QueueUsingDoublyLinkedList {
     Node front, rear;
 
-    QueueUsingMultipleNodes() {
+    QueueUsingDoublyLinkedList() {
         front = rear = null;
     }
 
     public static void main(String[] args) {
-        QueueUsingMultipleNodes queue = new QueueUsingMultipleNodes();
+        QueueUsingDoublyLinkedList queue = new QueueUsingDoublyLinkedList();
         queue.process();
     }
 
@@ -44,6 +44,10 @@ public class QueueUsingMultipleNodes {
         }
     }
 
+    private boolean isEmpty() {
+        return front == null;
+    }
+
     public void enqueue(int element) {
         System.out.println("Inserting " + element + " to the queue");
         Node newNode = new Node(element);
@@ -58,18 +62,19 @@ public class QueueUsingMultipleNodes {
     }
 
     public void dequeue() {
-        if (front != null) {
-            System.out.println("Element removed :: " + front.getValue());
-            front = front.getNext();
-        } else {
+        if (isEmpty()) {
             System.out.println("Queue is empty");
+            return;
         }
+
+        System.out.println("Element removed :: " + front.getValue());
+        front = front.getNext();
     }
 
     public void display() {
         Node currentNode = front;
 
-        if (front == null) {
+        if (isEmpty()) {
             System.out.println("Queue is empty");
             return;
         }
