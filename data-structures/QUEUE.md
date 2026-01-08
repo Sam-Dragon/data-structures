@@ -1,0 +1,25 @@
+# Queue
+
+> Definition
+
+- It is the linear data structure while is used for storing the elements
+- It works on the principle of FIFO [First In First Out] or LILO [Last In Last Out]
+
+> Operations
+
+- It performs operations like
+    - enqueue(element) - inserting element into list
+    - dequeue() - deleting element from list
+    - peek() - shows the top element in the list
+    - size() - shows the number of elements in the list
+    - empty() - check if stack any elements
+    - display() - display the contents of the list
+
+> Use cases
+
+- Bank Queue
+- Ticket Booking Queue
+
+> Limitations
+
+- Once the deletion is performed, even if the queue gets empty, we cannot perform insertion again
