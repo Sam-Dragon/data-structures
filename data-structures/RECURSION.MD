@@ -15,4 +15,4 @@
 
 > Limitations
 
-- 
+- Missing terminal condition can result in overflow of memory
