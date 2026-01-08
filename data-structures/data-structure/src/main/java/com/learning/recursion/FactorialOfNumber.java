@@ -1,4 +1,4 @@
-package com.learning.datastructure;
+package com.learning.recursion;
 
 import java.util.Scanner;
 
