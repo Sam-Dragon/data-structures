@@ -6,12 +6,13 @@
 
 > Condition
 
-- It must have terminal condition
-- Function must call itself with args
+- It must have **terminal condition**
+- Function must call itself with args, **pass args for collections**
 
 > Use cases
 
-- 
+- trees
+- file parsing
 
 > Limitations
 
