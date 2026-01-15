@@ -1,4 +1,4 @@
-package com.learning.iteration_vs_recursion.recursion;
+package com.learning.iteration_vs_recursion.recursion.bad_use_cases;
 
 import java.util.Arrays;
 
