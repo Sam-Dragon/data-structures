@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class FibonacciSeriesOfNumber {
 
+    static int iterations = 0;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number for fibonacci series");
@@ -16,9 +18,12 @@ public class FibonacciSeriesOfNumber {
 
         int fibonacciSeriesTotal = fib(number);
         System.out.println("fib(" + number + ") = " + fibonacciSeriesTotal);
+        System.out.println("Iteration Count :: " + iterations);
     }
 
     private static int fib(int number) {
+        iterations++;
+
         if (number < 2)
             return number;
 

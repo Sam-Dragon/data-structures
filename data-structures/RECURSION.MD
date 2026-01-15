@@ -9,6 +9,11 @@
 - It must have **terminal condition**
 - Function must call itself with args, **pass args for collections**
 
+> Complexity
+
+- Time - O(2 ^ n)
+- Space - O(n)
+
 > Use cases
 
 - trees
