@@ -8,12 +8,17 @@ public class FactorialOfNumber {
         System.out.println("Enter the Number for Factorial ? ");
         int number = scanner.nextInt();
 
+        if(number < 0) {
+            System.out.println("Please enter the valid number");
+            return;
+        }
+
         int fact = factOfNumber(number);
         System.out.println("fact(" + number + ") = " + fact);
     }
 
     private static int factOfNumber(int number) {
-        if (number == 1)
+        if (number <= 0)
             return 1;
 
         return number * factOfNumber(number - 1);

@@ -10,24 +10,55 @@ public class FactorialOfNumber {
         int number = scanner.nextInt();
 
         // validation
-        if (number <= 0) {
-            System.out.println("Please provide valid number (number > 0)");
+        if (number < 0) {
+            System.out.println("Please provide valid number");
             return;
         }
 
         // Execution
-        int factOfNumberUsingForLoop = factOfNumberUsingForLoop(number);
-        System.out.println("fact(" + number + ") = " + factOfNumberUsingForLoop);
+        int factOfNumberUsingForLoopAsc = factOfNumberUsingForLoopAsc(number);
+        System.out.println("fact(" + number + ") = " + factOfNumberUsingForLoopAsc);
 
-        int factOfNumberUsingWhileLoop = factOfNumberUsingWhileLoop(number);
-        System.out.println("fact(" + number + ") = " + factOfNumberUsingWhileLoop);
+        int factOfNumberUsingForLoopDsc = factOfNumberUsingForLoopDsc(number);
+        System.out.println("fact(" + number + ") = " + factOfNumberUsingForLoopDsc);
+
+        // Execution
+        int factOfNumberUsingWhileLoopAsc = factOfNumberUsingWhileLoopAsc(number);
+        System.out.println("fact(" + number + ") = " + factOfNumberUsingWhileLoopAsc);
+
+        int factOfNumberUsingWhileLoopDsc = factOfNumberUsingWhileLoopDsc(number);
+        System.out.println("fact(" + number + ") = " + factOfNumberUsingWhileLoopDsc);
     }
 
-    private static int factOfNumberUsingWhileLoop(int number) {
+    private static int factOfNumberUsingWhileLoopDsc(int number) {
         int fact = 1;
 
-        if (number == 1)
-            return 1;
+        while (number > 0) {
+//            System.out.print(number + " ");
+            fact *= number;
+            number--;
+        }
+
+        return fact;
+    }
+
+    private static int factOfNumberUsingWhileLoopAsc(int number) {
+        int fact = 1, index = 1;
+
+        while (index <= number) {
+//            System.out.print(index + " ");
+            fact *= index;
+            index++;
+        }
+
+        return fact;
+    }
+
+    private static int factOfNumberUsingForLoopAsc(int number) {
+        int fact = 1;
+
+        if (number <= 0)
+            return fact;
 
         while (number > 1) {
             fact *= number--;
@@ -36,7 +67,7 @@ public class FactorialOfNumber {
         return fact;
     }
 
-    private static int factOfNumberUsingForLoop(int number) {
+    private static int factOfNumberUsingForLoopDsc(int number) {
         int fact = 1;
 
         if (number == 1)
