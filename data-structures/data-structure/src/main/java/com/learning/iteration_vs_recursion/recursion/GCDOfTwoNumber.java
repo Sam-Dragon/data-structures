@@ -18,7 +18,7 @@ public class GCDOfTwoNumber {
         System.out.println("GCD(" + first + "," + second + ")=" + gcdOfTwoNumber);
     }
 
-    private static int gcdOfTwoNumber(int first, int second) {
+    /*private static int gcdOfTwoNumber(int first, int second) {
         if (first == 0)
             return second;
 
@@ -29,5 +29,13 @@ public class GCDOfTwoNumber {
             return gcdOfTwoNumber(first % second, second);
         else
             return gcdOfTwoNumber(first, second % first);
+    }*/
+
+    // Proper Solution
+    private static int gcdOfTwoNumber(int first, int second) {
+        if (second == 0)
+            return first;
+
+        return gcdOfTwoNumber(second, first % second);
     }
 }
