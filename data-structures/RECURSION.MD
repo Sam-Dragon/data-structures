@@ -3,6 +3,8 @@
 > Definition
 
 - It is the function which calls itself
+- It uses stack i.e. data will be starting from **LIFO** direction
+- It works in **reverse** direction
 
 > Condition
 
