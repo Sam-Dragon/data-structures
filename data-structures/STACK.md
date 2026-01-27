@@ -22,6 +22,7 @@
 - Exceptions callback
 - Infix to postfix expression,
 - Tower of Hanoi
+- Object creation and destruction
 
 > Limitations
 
