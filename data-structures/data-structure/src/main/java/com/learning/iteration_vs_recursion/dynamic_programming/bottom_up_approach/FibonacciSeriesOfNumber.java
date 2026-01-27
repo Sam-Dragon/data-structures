@@ -1,4 +1,4 @@
-package com.learning.iteration_vs_recursion.recursion.dynamic_programming.bottom_up_approach;
+package com.learning.iteration_vs_recursion.dynamic_programming.bottom_up_approach;
 
 import java.util.Scanner;
 

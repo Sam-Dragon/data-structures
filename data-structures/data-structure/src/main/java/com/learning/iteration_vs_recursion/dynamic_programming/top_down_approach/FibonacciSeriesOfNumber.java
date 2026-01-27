@@ -1,4 +1,4 @@
-package com.learning.iteration_vs_recursion.recursion.dynamic_programming.top_down_approach;
+package com.learning.iteration_vs_recursion.dynamic_programming.top_down_approach;
 
 import java.util.HashMap;
 import java.util.Map;
