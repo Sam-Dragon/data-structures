@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Combinations {
+public class CombinationsAscii {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class Combinations {
         String input = sc.nextLine();
         System.out.println("Entered Input :: " + input);
 
-        Combinations combinations = new Combinations();
+        CombinationsAscii combinations = new CombinationsAscii();
 
         // For Loop
         List<List<String>> combinationsUsingForLoop = combinations.combinationsUsingForLoop(input);
@@ -30,13 +30,13 @@ public class Combinations {
         List<String> thirdList = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
             List<String> firstList = new ArrayList<>();
-            firstList.add(array[i] + "");
-            thirdList.add(array[i] + "");
+            firstList.add(array[i] + 0 + "");
+            thirdList.add(array[i] + 0 + "");
 
             for (int j = 1 + i; j < array.length; j++) {
                 List<String> secondList = new ArrayList<>();
-                secondList.add(array[i] + "");
-                secondList.add(array[j] + "");
+                secondList.add(array[i] + 0 + "");
+                secondList.add(array[j] + 0 + "");
 
                 combinations.add(secondList);
             }
@@ -56,13 +56,13 @@ public class Combinations {
         int i = 0;
         while (i < array.length) {
             List<String> firstList = new ArrayList<>();
-            firstList.add(array[i] + "");
-            thirdList.add(array[i] + "");
+            firstList.add(array[i] + 0 + "");
+            thirdList.add(array[i] + 0 + "");
             int j = 1 + i;
             while (j < array.length) {
                 List<String> secondList = new ArrayList<>();
-                secondList.add(array[i] + "");
-                secondList.add(array[j] + "");
+                secondList.add(array[i] + 0 + "");
+                secondList.add(array[j] + 0 + "");
 
                 combinations.add(secondList);
                 j++;

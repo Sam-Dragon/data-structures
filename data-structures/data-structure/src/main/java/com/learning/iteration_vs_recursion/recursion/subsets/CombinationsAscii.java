@@ -1,0 +1,31 @@
+package com.learning.iteration_vs_recursion.recursion.subsets;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CombinationsAscii {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the input");
+        String input = sc.nextLine();
+        System.out.println("Entered Input :: " + input);
+
+        System.out.println(combinations("", input));
+    }
+
+    private static ArrayList<String> combinations(String initial, String input) {
+        if (input.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(initial);
+            return list;
+        }
+
+        char firstCharacter = input.charAt(0);
+        ArrayList<String> left = (combinations(initial, input.substring(1)));
+        ArrayList<String> right = (combinations(initial + (firstCharacter + 0), input.substring(1)));
+
+        left.addAll(right);
+        return left;
+    }
+}
