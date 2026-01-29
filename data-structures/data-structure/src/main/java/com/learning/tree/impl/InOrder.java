@@ -1,6 +1,4 @@
-package com.learning.tree.programs;
-
-import com.learning.tree.impl.BinarySearchTreeImpl;
+package com.learning.tree.impl;
 
 /*
  *          Root ->  30
