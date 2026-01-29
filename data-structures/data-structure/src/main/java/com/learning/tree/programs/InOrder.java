@@ -3,12 +3,12 @@ package com.learning.tree.programs;
 import com.learning.tree.impl.BinarySearchTreeImpl;
 
 /*
-*          Root ->  30
-*                 /    \
-*               20      50
-*              /  \    /  \
-*            15   25  40  60
-* */
+ *          Root ->  30
+ *                 /    \
+ *               20      50
+ *              /  \    /  \
+ *            15   25  40  60
+ * */
 
 public class InOrder extends BinarySearchTreeImpl {
 
@@ -34,15 +34,15 @@ public class InOrder extends BinarySearchTreeImpl {
         Node sixtyNode = new Node(60);
         fiftyNode.setRight(sixtyNode);
 
-        inorder(root);
+        inOrder(root);
         System.out.println();
     }
 
-    private static void inorder(Node root) {
+    private static void inOrder(Node root) {
         if (root != null) {
-            inorder(root.getLeft());
+            inOrder(root.getLeft());
             System.out.print(root.getData() + " ");
-            inorder(root.getRight());
+            inOrder(root.getRight());
         }
     }
 }
