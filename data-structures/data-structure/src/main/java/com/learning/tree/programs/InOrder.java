@@ -2,6 +2,14 @@ package com.learning.tree.programs;
 
 import com.learning.tree.impl.BinarySearchTreeImpl;
 
+/*
+*          Root ->  30
+*                 /    \
+*               20      50
+*              /  \    /  \
+*            15   25  40  60
+* */
+
 public class InOrder extends BinarySearchTreeImpl {
 
     public static void main(String[] args) {
