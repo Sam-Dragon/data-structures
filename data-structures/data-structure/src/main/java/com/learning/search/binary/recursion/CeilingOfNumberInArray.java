@@ -6,7 +6,7 @@ public class CeilingOfNumberInArray {
 
     public static void main(String[] args) {
         int[] array = {2, 3, 5, 9, 14, 16, 18};
-        System.out.println("Input Character Array");
+        System.out.println("Input Array");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + ", ");
         }
