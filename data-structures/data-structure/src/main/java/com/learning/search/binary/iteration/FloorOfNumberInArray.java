@@ -6,6 +6,11 @@ public class FloorOfNumberInArray {
 
     public static void main(String[] args) {
         int[] array = {2, 3, 5, 9, 14, 16, 18};
+        System.out.println("Input Character Array");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.println();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the element to floor");
@@ -28,17 +33,14 @@ public class FloorOfNumberInArray {
                 return array[mid];
 
             if (target > array[mid]) {
-                if (mid + 1 > array.length - 1)
-                    return array[mid];
-
                 low = mid + 1;
             } else {
-                if (mid - 1 < 0)
-                    return array[mid];
-
                 high = mid - 1;
             }
         }
+
+        if (low > array.length || high < 0)
+            high = array.length - 1;
 
         return array[high];
     }
@@ -51,17 +53,14 @@ public class FloorOfNumberInArray {
                 return array[mid];
 
             if (target > array[mid]) {
-                if (mid + 1 > array.length - 1)
-                    return array[mid];
-
                 low = mid + 1;
             } else {
-                if (mid - 1 < 0)
-                    return array[mid];
-
                 high = mid - 1;
             }
         }
+
+        if (low > array.length || high < 0)
+            high = array.length - 1;
 
         return array[high];
     }
