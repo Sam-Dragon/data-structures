@@ -2,25 +2,25 @@ package com.learning.search.binary.iteration;
 
 import java.util.Scanner;
 
-public class CeilingOfNumberInArray {
+public class FloorOfNumberInArray {
 
     public static void main(String[] args) {
         int[] array = {2, 3, 5, 9, 14, 16, 18};
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the element to ceil");
+        System.out.println("Enter the element to floor");
         int target = sc.nextInt();
-        System.out.println("Element to ceil = " + target);
+        System.out.println("Element to floor = " + target);
 
         int low = 0, high = array.length - 1;
-        int findCeilingOfNumberUsingForLoop = findCeilingOfNumberUsingForLoop(low, high, array, target);
-        System.out.println(target + " is ceiling at number = " + findCeilingOfNumberUsingForLoop);
+        int findFloorOfNumberUsingForLoop = findFloorOfNumberUsingForLoop(low, high, array, target);
+        System.out.println(target + " is Floor at number = " + findFloorOfNumberUsingForLoop);
 
-        int findCeilingOfNumberUsingWhileLoop = findCeilingOfNumberUsingWhileLoop(low, high, array, target);
-        System.out.println(target + " is ceiling at number = " + findCeilingOfNumberUsingWhileLoop);
+        int findFloorOfNumberUsingWhileLoop = findFloorOfNumberUsingWhileLoop(low, high, array, target);
+        System.out.println(target + " is Floor at number = " + findFloorOfNumberUsingWhileLoop);
     }
 
-    private static int findCeilingOfNumberUsingForLoop(int low, int high, int[] array, int target) {
+    private static int findFloorOfNumberUsingForLoop(int low, int high, int[] array, int target) {
         for (; low <= high; ) {
             int mid = low + (high - low) / 2;
 
@@ -40,10 +40,10 @@ public class CeilingOfNumberInArray {
             }
         }
 
-        return array[low];
+        return array[high];
     }
 
-    private static int findCeilingOfNumberUsingWhileLoop(int low, int high, int[] array, int target) {
+    private static int findFloorOfNumberUsingWhileLoop(int low, int high, int[] array, int target) {
         while (low <= high) {
             int mid = low + (high - low) / 2;
 
@@ -63,6 +63,6 @@ public class CeilingOfNumberInArray {
             }
         }
 
-        return array[low];
+        return array[high];
     }
 }
