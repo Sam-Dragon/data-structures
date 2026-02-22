@@ -7,10 +7,10 @@ import java.util.Scanner;
  * Target = Squared Number, return
  * Target = Less Squared Number, Capture & Return at last
  * <p>
- * Condition = ((array[mid] * array[mid]) <= target) -- Finds Lower Or Equal Closest Number
- *  && return high > 0 ? array[high] : array[low];
- * Condition = ((array[mid] * array[mid]) <= target) -- Finds Higher Or Equal Closest Number
- *  && return low <= 0 ? array[low] : array[high];
+ * Condition = (array[mid] * array[mid]) == target && (array[mid + 1] * array[mid + 1]) > target -- Finds Lower Or
+ * Equal Closest Number
+ * Condition = (array[mid] * array[mid]) == target && (array[mid + 1] * array[mid + 1]) < target -- Find Higher Or
+ * Equal Closest Number
  */
 
 public class FindSquaredNumberEqualToTarget {
@@ -18,6 +18,8 @@ public class FindSquaredNumberEqualToTarget {
     public static void main(String[] args) {
         System.out.println("Input Array");
         int[] array = {2, 3, 4, 5, 6, 7, 8, 11, 20, 21, 23, 25, 25};
+//        int[] array = {4};
+//        int[] array = {};
         for (int i : array) {
             System.out.print(i + ", ");
         }
@@ -39,7 +41,7 @@ public class FindSquaredNumberEqualToTarget {
 
     private static int closestSquareNumber(int low, int high, int[] array, int target) {
         if (low > high)
-            return high > 0 ? array[high] : array[low];
+            return array[low];
 
         int mid = low + (high - low) / 2;
 
@@ -48,9 +50,10 @@ public class FindSquaredNumberEqualToTarget {
             return array[mid];
 
         // Iteration
-        if ((array[mid] * array[mid]) < target)
-            return closestSquareNumber(mid + 1, high, array, target);
-        else
+        if ((array[mid + 1] * array[mid + 1]) > target)
             return closestSquareNumber(low, mid - 1, array, target);
+        else
+            return closestSquareNumber(mid + 1, high, array, target);
     }
+
 }

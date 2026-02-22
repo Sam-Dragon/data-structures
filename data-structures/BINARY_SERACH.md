@@ -14,10 +14,27 @@
 
 > Limitations
 
--
+- It needs sorted array for processing
 
 > Complexity
 
 - insert: O(log n)
 - delete: O(log n)
 - lookup: O(log n)
+
+## Approach
+
+- Try to solve binary search iteratively
+    - If asked explicitly to use recursion
+
+- Binary Search + Recursion used in infinite array search, Binary Search Tree [BST]
+
+## PROGRAM BREAKDOWN LOGIC
+
+- Terminal Condition
+    - Only focus to break out the recursion. [Dont add extra logic here]
+- Main Condition
+    - Ensure any logic to reach to the result must be done here
+    - Be it lowest, highest, first non-negative number,
+- Traversal Condition
+    - Only apply traversals here, [Note: We can change searching mid to mid + 1 or mid -1]
