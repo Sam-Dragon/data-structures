@@ -18,16 +18,18 @@ public class SearchIndexOfElementInArray {
     }
 
     private static int findIndexUsingBinarySearch(int low, int high, int[] array, int target) {
-        int mid = low + (high - low) / 2;
-
         // Terminal Condition
         if (low > high)
             return -1;
 
-        // Logic
+        int mid = low + (high - low) / 2;
+
+        // Condition
         if (array[mid] == target)
             return mid;
-        else if (target < array[mid])
+
+        // Iteration
+        if (target < array[mid])
             return findIndexUsingBinarySearch(low, mid - 1, array, target);
         else
             return findIndexUsingBinarySearch(mid + 1, high, array, target);
