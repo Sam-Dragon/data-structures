@@ -1,12 +1,14 @@
-package com.learning.search.linear;
+package com.learning.search.linear.iteration;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
-public class FindTargetIndexInArray {
+public class SearchAllIndexesOfElementInArray {
 
     public static void main(String[] args) {
-//        int[] array = {3, 4, 6, 1, 2, 8, 7};
-        int[] array = {};
+        int[] array = {2, 3, 5, 6, 6, 15, 16, 18, 20};
+//        int[] array = {};
         for (int val : array) {
             System.out.print(val + ", ");
         }
@@ -17,7 +19,7 @@ public class FindTargetIndexInArray {
         int target = sc.nextInt();
         System.out.println("Element Index to Search" + target);
 
-        int index = isElementPresentInArrayForwardForLoop(array, target);
+        List<Integer> index = isElementPresentInArrayForwardForLoop(array, target);
         System.out.println("Element Index in Array : " + index);
 
         index = isElementPresentInArrayBackwardForLoop(array, target);
@@ -30,60 +32,67 @@ public class FindTargetIndexInArray {
         System.out.println("Element Index in Array : " + index);
     }
 
-    private static int isElementPresentInArrayBackwardWhileLoop(int[] array, int target) {
+    private static List<Integer> isElementPresentInArrayBackwardWhileLoop(int[] array, int target) {
+        List<Integer> list = new LinkedList<>();
+
         if (array.length == 0)
-            return Integer.MIN_VALUE;
+            return list;
 
         int length = array.length - 1;
         while (length >= 0) {
             if (target == array[length])
-                return length;
+                list.add(length);
             length--;
         }
 
-        return Integer.MIN_VALUE;
+        return list;
     }
 
-    private static int isElementPresentInArrayForwardWhileLoop(int[] array, int target) {
+    private static List<Integer> isElementPresentInArrayForwardWhileLoop(int[] array, int target) {
         int i = 0;
+        List<Integer> list = new LinkedList<>();
 
         if (array.length == 0)
-            return Integer.MIN_VALUE;
+            return list;
 
         while (i < array.length) {
             if (target == array[i])
-                return i;
+                list.add(i);
             i++;
         }
 
-        return Integer.MIN_VALUE;
+        return list;
     }
 
-    private static int isElementPresentInArrayForwardForLoop(int[] array, int target) {
+    private static List<Integer> isElementPresentInArrayForwardForLoop(int[] array, int target) {
+        List<Integer> list = new LinkedList<>();
+
         // validation
         if (array.length == 0)
-            return Integer.MIN_VALUE;
+            return list;
 
         // Iteration
         for (int i = 0; i < array.length; i++) {
             if (target == array[i])
-                return i;
+                list.add(i);
         }
 
-        return Integer.MIN_VALUE;
+        return list;
     }
 
-    private static int isElementPresentInArrayBackwardForLoop(int[] array, int target) {
+    private static List<Integer> isElementPresentInArrayBackwardForLoop(int[] array, int target) {
+        List<Integer> list = new LinkedList<>();
+
         // validation
         if (array.length == 0)
-            return Integer.MIN_VALUE;
+            return list;
 
         // Iteration
         for (int i = array.length - 1; i >= 0; i--) {
             if (target == array[i])
-                return i;
+                list.add(i);
         }
 
-        return Integer.MIN_VALUE;
+        return list;
     }
 }

@@ -1,4 +1,4 @@
-package com.learning.search.linear;
+package com.learning.search.linear.iteration;
 
 public class FindEvenNumberOfDigitsInArray {
 
@@ -46,7 +46,7 @@ public class FindEvenNumberOfDigitsInArray {
             // NOTE: remove sign from numbers
             int positiveNumber = Math.abs(num);
 
-            boolean isEvenDigit = checkIfNumberHasEvenDigit(positiveNumber);
+            boolean isEvenDigit = countDigitsAndCheckForEven(positiveNumber);
             if (isEvenDigit) {
 //                System.out.println(num);
                 count++;
@@ -56,7 +56,7 @@ public class FindEvenNumberOfDigitsInArray {
         return count;
     }
 
-    private static boolean checkIfNumberHasEvenDigit(int num) {
+    private static boolean countDigitsAndCheckForEven(int num) {
         int count = 0;
 
         while (num > 0) {

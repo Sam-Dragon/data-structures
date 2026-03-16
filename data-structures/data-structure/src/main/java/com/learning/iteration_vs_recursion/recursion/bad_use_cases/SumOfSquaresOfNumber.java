@@ -15,14 +15,37 @@ public class SumOfSquaresOfNumber {
             return;
         }
 
-        int sumOfNumber = sum(number);
-        System.out.println("Sum of first (" + number + ") natural number squares = " + sumOfNumber);
+        System.out.println("Backward Sequence");
+        int sum = backwardSum(number);
+        System.out.println("Sum of first (" + number + ") natural number squares  = " + sum);
+
+        System.out.println("Forward Sequence");
+        sum = forwardSum(number);
+        System.out.println("Sum of first (" + number + ") natural number squares = " + sum);
+
+        System.out.println("Random Sequence");
+        sum = randomSequenceSum(number);
+        System.out.println("Sum of first (" + number + ") natural number squares = " + sum);
     }
 
-    private static int sum(int number) {
-        if (number == 1)
+    private static int backwardSum(int n) {
+        if (n == 1)
             return 1;
 
-        return number * number + sum(number - 1);
+        return n * n * backwardSum(n - 1);
+    }
+
+    private static int forwardSum(int n) {
+        if (n == 1)
+            return 1;
+
+        return forwardSum(n - 1) * n * n;
+    }
+
+    private static int randomSequenceSum(int n) {
+        if (n == 1)
+            return 1;
+
+        return n *  randomSequenceSum(n - 1) * n;
     }
 }

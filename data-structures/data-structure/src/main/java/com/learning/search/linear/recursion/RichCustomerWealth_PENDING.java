@@ -1,6 +1,6 @@
-package com.learning.search.linear;
+package com.learning.search.linear.recursion;
 
-public class RichCustomerWealth {
+public class RichCustomerWealth_PENDING {
 
     public static void main(String[] args) {
         int[][] accounts = {{3, 2, 1}, {1, 2, 3}};

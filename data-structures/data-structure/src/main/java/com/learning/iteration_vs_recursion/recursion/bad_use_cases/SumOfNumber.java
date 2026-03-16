@@ -10,19 +10,31 @@ public class SumOfNumber {
         int number = sc.nextInt();
         System.out.println("Entered Number for Sum = " + number);
 
-        if(number <= 0) {
+        if (number <= 0) {
             System.out.println("Please provide valid number (number > 0)");
             return;
         }
 
-        int sumOfNumber = sum(number);
-        System.out.println("Sum of first (" + number + ") natural number = " + sumOfNumber);
-    }
+        System.out.println("Backward Sequence");
+        int sum = backwardSum(number);
+        System.out.println("Sum of first (" + number + ") natural number = " + sum);
 
-    private static int sum(int number) {
-        if (number == 1)
+        System.out.println("Forward Sequence");
+        sum = forwardSum(number);
+        System.out.println("Sum of first (" + number + ") natural number = " + sum);
+    }
+    private static int backwardSum(int n) {
+        if (n == 1)
             return 1;
 
-        return number + sum(number - 1);
+        return n + backwardSum(n - 1);
     }
+
+    private static int forwardSum(int n) {
+        if (n == 1)
+            return 1;
+
+        return forwardSum(n - 1) + n;
+    }
+
 }

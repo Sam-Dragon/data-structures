@@ -6,6 +6,9 @@ public class SearchIndexOfElementInArray {
 
     public static void main(String[] args) {
         int[] array = {2, 3, 5, 6, 15, 16, 18, 20};
+        for (int val : array)
+            System.out.print(val + ", ");
+        System.out.println();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the element to search");

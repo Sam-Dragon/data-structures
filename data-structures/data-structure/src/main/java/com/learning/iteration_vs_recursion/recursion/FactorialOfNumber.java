@@ -8,19 +8,31 @@ public class FactorialOfNumber {
         System.out.println("Enter the Number for Factorial ? ");
         int number = scanner.nextInt();
 
-        if(number < 0) {
+        if (number < 0) {
             System.out.println("Please enter the valid number");
             return;
         }
 
-        int fact = factOfNumber(number);
+        System.out.println("Backward Product");
+        int fact = backwardProduct(number);
+        System.out.println("fact(" + number + ") = " + fact);
+
+        System.out.println("Forward Product");
+        fact = forwardProduct(number);
         System.out.println("fact(" + number + ") = " + fact);
     }
 
-    private static int factOfNumber(int number) {
-        if (number <= 0)
+    private static int backwardProduct(int n) {
+        if (n == 1)
             return 1;
 
-        return number * factOfNumber(number - 1);
+        return n * backwardProduct(n - 1);
+    }
+
+    private static int forwardProduct(int n) {
+        if (n == 1)
+            return 1;
+
+        return forwardProduct(n - 1) * n;
     }
 }

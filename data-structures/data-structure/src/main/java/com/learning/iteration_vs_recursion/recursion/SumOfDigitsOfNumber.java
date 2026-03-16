@@ -10,19 +10,26 @@ public class SumOfDigitsOfNumber {
         int number = sc.nextInt();
         System.out.println("Input entered :: " + number);
 
-        int sumOfDigitsOfNumber = sumOfDigitsOfNumber(number);
-        System.out.println("Sum(" + number + ") = " + sumOfDigitsOfNumber);
+        System.out.println("Forward Sequence");
+        int sum = forwardDigitsSum(number);
+        System.out.println("Digits Sum (" + number + ") = " + sum);
+
+        System.out.println("Backward Sequence");
+        sum = backwardDigitsSum(number);
+        System.out.println("Digits Sum (" + number + ") = " + sum);
     }
 
-    private static int sumOfDigitsOfNumber(int number) {
-        if (number / 10 == number) {
-            return number;
-        }
+    private static int forwardDigitsSum(int n) {
+        if (n == 0)
+            return n;
 
-        int quotient = (number % 10);
-        int reminder = number / 10;
-//        System.out.println(quotient + ", " + reminder);
+        return n % 10 + forwardDigitsSum(n / 10);
+    }
 
-        return quotient + sumOfDigitsOfNumber(reminder);
+    private static int backwardDigitsSum(int n) {
+        if (n == 0)
+            return n;
+
+        return backwardDigitsSum(n / 10) + n % 10;
     }
 }

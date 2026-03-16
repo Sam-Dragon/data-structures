@@ -14,7 +14,7 @@
 
 > Limitations
 
-- It needs sorted array for processing
+- It requires array to be sorted for processing
 
 > Complexity
 
@@ -32,7 +32,7 @@
 ## PROGRAM BREAKDOWN LOGIC
 
 - Terminal Condition
-    - Only focus to break out the recursion. [Dont add extra logic here]
+    - Only focus to break out the recursion. [Don't add extra logic here]
 - Main Condition
     - Ensure any logic to reach to the result must be done here
     - Be it lowest, highest, first non-negative number,

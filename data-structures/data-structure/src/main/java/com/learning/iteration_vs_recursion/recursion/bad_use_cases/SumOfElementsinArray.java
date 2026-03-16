@@ -11,15 +11,24 @@ public class SumOfElementsinArray {
               .forEach(System.out::println);
 
         // Execution
-        int arraySum = sumOfArray(array.length - 1, array);
-        System.out.println("sum = " + arraySum);
+        int arraySum = forwardSum(array.length - 1, array);
+        System.out.println("forward sum = " + arraySum);
+
+        arraySum = backwardSum(array.length - 1, array);
+        System.out.println("backward sum = " + arraySum);
     }
 
-    private static int sumOfArray(int length, int[] numbers) {
+    private static int forwardSum(int length, int[] numbers) {
         if (length == 0)
             return numbers[0];
 
-        return numbers[length] + sumOfArray(length - 1, numbers);
+        return numbers[length] + forwardSum(length - 1, numbers);
     }
 
+    private static int backwardSum(int length, int[] numbers) {
+        if (length == 0)
+            return numbers[0];
+
+        return backwardSum(length - 1, numbers) + numbers[length];
+    }
 }

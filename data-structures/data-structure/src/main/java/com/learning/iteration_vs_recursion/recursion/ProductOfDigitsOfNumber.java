@@ -9,25 +9,27 @@ public class ProductOfDigitsOfNumber {
         System.out.println("Please enter the number");
         int number = sc.nextInt();
         System.out.println("Input entered :: " + number);
-        
-        int productOfDigitsOfNumber = productOfDigitsOfNumber(number);
-        System.out.println("product(" + number + ") = " + productOfDigitsOfNumber);
+
+        System.out.println("Forward Sequence");
+        int sum = forwardDigitsProduct(number);
+        System.out.println("Digits Product (" + number + ") = " + sum);
+
+        System.out.println("Backward Sequence");
+        sum = backwardDigitsProduct(number);
+        System.out.println("Digits Product (" + number + ") = " + sum);
     }
 
-    private static int productOfDigitsOfNumber(int number) {
-        if (number / 10 == number) {
-            return 1;
-        }
+    private static int forwardDigitsProduct(int n) {
+        if (n % 10 == n)
+            return n;
 
-        int quotient = (number % 10);
-//        System.out.println("quotient = " + quotient);
-        // ADDITIONAL CHECK
-        if (quotient == 0)
-            return 0;
+        return (n % 10) * forwardDigitsProduct(n / 10);
+    }
 
-        int reminder = number / 10;
-//        System.out.println(quotient + ", " + reminder);
+    private static int backwardDigitsProduct(int n) {
+        if (n % 10 == n)
+            return n;
 
-        return quotient * productOfDigitsOfNumber(reminder);
+        return backwardDigitsProduct(n / 10) * (n % 10);
     }
 }
