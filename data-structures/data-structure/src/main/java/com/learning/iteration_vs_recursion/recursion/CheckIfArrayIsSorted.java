@@ -14,18 +14,32 @@ public class CheckIfArrayIsSorted {
               .forEach(e -> System.out.print(e + ","));
         System.out.println();
 
-        CheckIfArrayIsSorted checkIfArrayIsSorted = new CheckIfArrayIsSorted();
-
         int index = 0;
-        boolean isArraySorted = checkIfArrayIsSorted.isArraySorted(array, index);
+        boolean isArraySorted = isArraySorted(index, array);
+        System.out.println("Is Array Sorted :: " + isArraySorted);
+
+        isArraySorted = isArraySorted2(index, array);
         System.out.println("Is Array Sorted :: " + isArraySorted);
     }
 
-    private boolean isArraySorted(int[] array, int index) {
+    private static boolean isArraySorted(int index, int[] array) {
 //        System.out.println(index);
         if (index == array.length - 1)
             return true;
 
-        return array[index] < array[index + 1] && isArraySorted(array, index + 1);
+        return array[index] < array[index + 1] && isArraySorted(index + 1, array);
+    }
+
+    private static boolean isArraySorted2(int index, int[] array) {
+        if (index == array.length - 1)
+            return true;
+
+        // Work on NEGATIVE CONDITION
+        if (array[index] > array[index + 1]) {
+            System.out.println("Indexes issue [" + index + "," + (index + 1) + "]");
+            return false;
+        }
+
+        return isArraySorted2(index + 1, array);
     }
 }

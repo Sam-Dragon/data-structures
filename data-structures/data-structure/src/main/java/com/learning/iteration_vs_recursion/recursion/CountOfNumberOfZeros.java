@@ -25,4 +25,5 @@ public class CountOfNumberOfZeros {
 
         return count(number / 10, counter);
     }
+
 }
