@@ -2,7 +2,7 @@ package com.learning.iteration_vs_recursion.recursion.bad_use_cases;
 
 import java.util.Scanner;
 
-public class ReverseTheString {
+public class PalindromeString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the String to Reverse ? ");
@@ -15,9 +15,11 @@ public class ReverseTheString {
 
         String reversed = reverseTheString(input, input.length() - 1, new StringBuilder());
         System.out.println("Reverse Of the String [" + input + "] = " + reversed);
+        System.out.println("Is Palindrome ? " + input.equals(reversed));
 
         reversed = reverseTheString2("", input, input.length() - 1);
         System.out.println("Reverse Of the String [" + input + "] = " + reversed);
+        System.out.println("Is Palindrome ? " + input.equals(reversed));
     }
 
     private static String reverseTheString(String input, int length, StringBuilder builder) {
