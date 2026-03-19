@@ -1,9 +1,9 @@
-package com.learning.iteration_vs_recursion.recursion.subsets;
+package com.learning.subsets.recursion.combination;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Combinations {
+public class CombinationsAscii {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -21,8 +21,9 @@ public class Combinations {
             return list;
         }
 
+        char firstCharacter = input.charAt(0);
         ArrayList<String> left = (combinations(initial, input.substring(1)));
-        ArrayList<String> right = (combinations(initial + input.charAt(0), input.substring(1)));
+        ArrayList<String> right = (combinations(initial + (firstCharacter + 0), input.substring(1)));
 
         left.addAll(right);
         return left;

@@ -1,4 +1,4 @@
-package com.learning.iteration_vs_recursion.iteration;
+package com.learning.subsets.iteration.substring;
 
 import java.util.Scanner;
 

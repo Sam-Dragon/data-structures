@@ -1,4 +1,4 @@
-package com.learning.iteration_vs_recursion.iteration.subsets;
+package com.learning.subsets.iteration.combination;
 
 import java.util.ArrayList;
 import java.util.List;
