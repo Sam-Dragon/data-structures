@@ -32,9 +32,11 @@ public class SearchIndexOfElementInArray {
             return mid;
 
         // Iteration
-        if (target < array[mid])
-            return findIndexUsingBinarySearch(low, mid - 1, array, target);
+        if (array[mid] > target)
+            high = mid - 1;
         else
-            return findIndexUsingBinarySearch(mid + 1, high, array, target);
+            low = mid + 1;
+
+        return findIndexUsingBinarySearch(low, high, array, target);
     }
 }
