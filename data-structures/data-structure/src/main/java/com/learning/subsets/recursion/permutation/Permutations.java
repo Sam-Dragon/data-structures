@@ -1,9 +1,9 @@
-package com.learning.iteration_vs_recursion.recursion.permutation;
+package com.learning.subsets.recursion.permutation;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PermutationsWay2 {
+public class Permutations {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -22,14 +22,10 @@ public class PermutationsWay2 {
         }
 
         char character = input.charAt(0);
-        ArrayList<String> finalList = new ArrayList<>();
+        ArrayList<String> left = (permutations(character + initial, input.substring(1)));
+        ArrayList<String> right = (permutations(initial + character, input.substring(1)));
 
-        for (int i = 0; i <= initial.length(); i++) {
-            String begin = initial.substring(0, i);
-            String end = initial.substring(i);
-            finalList.addAll(permutations(begin + character + end , input.substring(1)));
-        }
-
-        return finalList;
+        left.addAll(right);
+        return left;
     }
 }
