@@ -1,6 +1,6 @@
 package com.learning.linked_list.singly.program;
 
-public class ReverseTheList {
+public class ListReversal {
 
     private static class Node {
         int data;
@@ -70,7 +70,7 @@ public class ReverseTheList {
     }
 
     public static void main(String[] args) {
-        ReverseTheList list = new ReverseTheList();
+        ListReversal list = new ListReversal();
         list.prepare();
         list.display();
 
